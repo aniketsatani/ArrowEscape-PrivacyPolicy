@@ -1,0 +1,599 @@
+<title>Arrow Escape: Puzzle Game — Privacy Policy</title>
+<meta name="description" content="How LoopBit's Arrow Escape: Puzzle Game handles your data — plainly explained.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    /* ── Tokens ─────────────────────────────────────────────────────────── */
+    :root {
+      --bg: #F5F6FA;
+      --surface: #FFFFFF;
+      --surface-2: #ECEFF6;
+      --border: #DEE2EC;
+      --text: #14161C;
+      --text-2: #585F6E;
+      --text-3: #8A90A0;
+      --accent: #2554E8;
+      --accent-2: #7C3AED;
+      --accent-ink: #FFFFFF;
+      --accent-soft: #E7EDFE;
+      --accent-soft-border: #C9D7FC;
+      --good: #16A34A;
+      --good-soft: #E7F6EC;
+      --shadow: 0 1px 2px rgba(20, 22, 28, 0.04), 0 8px 24px rgba(20, 22, 28, 0.06);
+      --shadow-lg: 0 2px 4px rgba(20, 22, 28, 0.05), 0 20px 48px rgba(20, 22, 28, 0.09);
+      --radius: 12px;
+      --serif: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Book Antiqua', 'Noto Serif', serif;
+      --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      --mono: ui-monospace, 'SFMono-Regular', 'Cascadia Mono', Consolas, 'Liberation Mono', monospace;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0C0D12;
+        --surface: #16171F;
+        --surface-2: #1D1F2A;
+        --border: #2A2D3A;
+        --text: #F1F2F6;
+        --text-2: #ABB1C2;
+        --text-3: #767C8E;
+        --accent: #6C93FF;
+        --accent-2: #A587FF;
+        --accent-ink: #0C0D12;
+        --accent-soft: rgba(108, 147, 255, 0.14);
+        --accent-soft-border: rgba(108, 147, 255, 0.32);
+        --good: #34D399;
+        --good-soft: rgba(52, 211, 153, 0.14);
+        --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+        --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.35), 0 24px 56px rgba(0, 0, 0, 0.45);
+      }
+    }
+    :root[data-theme="dark"] {
+      --bg: #0C0D12;
+      --surface: #16171F;
+      --surface-2: #1D1F2A;
+      --border: #2A2D3A;
+      --text: #F1F2F6;
+      --text-2: #ABB1C2;
+      --text-3: #767C8E;
+      --accent: #6C93FF;
+      --accent-2: #A587FF;
+      --accent-ink: #0C0D12;
+      --accent-soft: rgba(108, 147, 255, 0.14);
+      --accent-soft-border: rgba(108, 147, 255, 0.32);
+      --good: #34D399;
+      --good-soft: rgba(52, 211, 153, 0.14);
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+      --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.35), 0 24px 56px rgba(0, 0, 0, 0.45);
+    }
+
+    /* ── Reset-adjacent basics ──────────────────────────────────────────── */
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--serif);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); }
+    a:focus-visible, button:focus-visible, .toc a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    ::selection { background: var(--accent-soft-border); }
+
+    h1, h2, h3 {
+      font-family: var(--sans);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      text-wrap: balance;
+      color: var(--text);
+      margin: 0;
+    }
+
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-3);
+    }
+
+    /* ── Scroll progress ───────────────────────────────────────────────── */
+    .progress-rail { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 20; background: transparent; }
+    .progress-bar {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      transition: width 0.08s linear;
+    }
+
+    /* ── Page shell ─────────────────────────────────────────────────────── */
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: clamp(20px, 4vw, 48px) clamp(16px, 4vw, 40px) 64px;
+    }
+
+    /* ── Header band ────────────────────────────────────────────────────── */
+    .header {
+      position: relative;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: var(--shadow-lg);
+      padding: clamp(36px, 6vw, 56px) clamp(24px, 6vw, 56px);
+      margin-bottom: 28px;
+    }
+    .header__glow {
+      position: absolute;
+      top: -220px;
+      right: -160px;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(closest-side, var(--accent) 0%, var(--accent-2) 45%, transparent 72%);
+      opacity: 0.16;
+      filter: blur(10px);
+      pointer-events: none;
+    }
+    @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .header__glow { opacity: 0.22; } }
+    :root[data-theme="dark"] .header__glow { opacity: 0.22; }
+
+    .header__inner { position: relative; max-width: 620px; }
+    .kicker {
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .header h1 { font-size: clamp(30px, 4.6vw, 42px); line-height: 1.1; margin-bottom: 12px; }
+    .header__lede {
+      font-family: var(--serif);
+      font-size: 17.5px;
+      color: var(--text-2);
+      max-width: 54ch;
+      margin-bottom: 22px;
+    }
+    .date-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 12.5px;
+      font-variant-numeric: tabular-nums;
+      color: var(--text-2);
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      padding: 7px 13px;
+      border-radius: 999px;
+    }
+    .date-chip strong { color: var(--text); font-weight: 600; }
+    .date-chip svg { color: var(--accent); }
+
+    /* ── At-a-glance grid ───────────────────────────────────────────────── */
+    .glance {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .glance__item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: var(--shadow);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .glance__item:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+    .glance__icon {
+      width: 32px; height: 32px; border-radius: 8px;
+      display: grid; place-items: center;
+      background: var(--good-soft); color: var(--good); flex: none;
+    }
+    .glance__icon svg { width: 17px; height: 17px; }
+    .glance__title { font-family: var(--sans); font-weight: 700; font-size: 13.5px; color: var(--text); }
+    .glance__body { font-family: var(--sans); font-size: 12.5px; color: var(--text-2); line-height: 1.5; }
+
+    /* ── Layout: TOC rail + content ─────────────────────────────────────── */
+    .layout { display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start; }
+
+    .toc { position: sticky; top: 24px; }
+    .toc__label { margin-bottom: 12px; display: block; }
+    .toc ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+    .toc a {
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+      font-family: var(--sans);
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-2);
+      text-decoration: none;
+      padding: 7px 10px;
+      border-radius: 8px;
+      border-left: 2px solid transparent;
+      transition: background 0.12s ease, color 0.12s ease;
+    }
+    .toc a .n { font-family: var(--mono); font-size: 11px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+    .toc a:hover { background: var(--surface-2); color: var(--text); }
+    .toc a.active { color: var(--accent); border-left-color: var(--accent); background: var(--accent-soft); }
+    .toc a.active .n { color: var(--accent); }
+
+    .toc-mobile { display: none; }
+
+    /* ── Document content ───────────────────────────────────────────────── */
+    .doc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+      padding: clamp(24px, 4vw, 48px);
+    }
+
+    section.sec { padding: 32px 0; border-bottom: 1px solid var(--border); scroll-margin-top: 24px; }
+    section.sec:first-of-type { padding-top: 0; }
+    section.sec:last-of-type { border-bottom: none; padding-bottom: 0; }
+
+    .sec__head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 14px; }
+    .sec__num { font-family: var(--mono); font-size: 13px; color: var(--text-3); font-variant-numeric: tabular-nums; flex: none; }
+    .sec h2 { font-size: 21px; }
+
+    .doc p { max-width: 68ch; margin: 0 0 14px; color: var(--text); }
+    .doc p:last-child { margin-bottom: 0; }
+    .doc p.muted { color: var(--text-2); }
+
+    h3.sub { font-family: var(--sans); font-size: 14px; font-weight: 700; color: var(--text); margin: 22px 0 10px; }
+    section.sec > h3.sub:first-of-type,
+    .sec__head + h3.sub { margin-top: 4px; }
+
+    .doc ul, .doc ol.plain { max-width: 68ch; margin: 0 0 14px; padding-left: 22px; color: var(--text); }
+    .doc li { margin-bottom: 6px; }
+    .doc li:last-child { margin-bottom: 0; }
+    .doc li::marker { color: var(--accent); }
+
+    .table-wrap { overflow-x: auto; margin: 4px 0 14px; border: 1px solid var(--border); border-radius: 10px; }
+    table.perms { width: 100%; border-collapse: collapse; min-width: 480px; font-family: var(--sans); font-size: 13.5px; }
+    table.perms th {
+      text-align: left; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--text-3); font-weight: 700; padding: 10px 14px; background: var(--surface-2);
+      border-bottom: 1px solid var(--border);
+    }
+    table.perms td { padding: 12px 14px; border-bottom: 1px solid var(--border); color: var(--text-2); vertical-align: top; }
+    table.perms tr:last-child td { border-bottom: none; }
+    table.perms td.k { color: var(--text); font-weight: 600; white-space: nowrap; }
+
+    .callout {
+      display: flex; gap: 12px; align-items: flex-start;
+      background: var(--accent-soft); border: 1px solid var(--accent-soft-border);
+      border-radius: 10px; padding: 14px 16px; margin: 4px 0 14px; max-width: 68ch;
+    }
+    .callout svg { width: 18px; height: 18px; color: var(--accent); flex: none; margin-top: 2px; }
+    .callout p { margin: 0; font-size: 14.5px; color: var(--text); }
+
+    /* ── Contact panel ──────────────────────────────────────────────────── */
+    .contact {
+      margin-top: 28px;
+      position: relative;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+      padding: clamp(26px, 4vw, 44px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .contact::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(120deg, var(--accent-soft), transparent 55%);
+      pointer-events: none;
+    }
+    .contact > * { position: relative; }
+    .contact h2 { font-size: 19px; margin-bottom: 6px; }
+    .contact p { font-family: var(--sans); font-size: 13.5px; color: var(--text-2); max-width: 48ch; margin: 0; }
+    .contact-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--sans); font-weight: 700; font-size: 14px;
+      background: var(--accent); color: var(--accent-ink);
+      padding: 13px 22px; border-radius: 10px; text-decoration: none;
+      white-space: nowrap; flex: none;
+      box-shadow: var(--shadow);
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+    .contact-btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-lg); }
+    .contact-btn svg { width: 15px; height: 15px; }
+
+    .foot {
+      margin-top: 22px;
+      font-family: var(--sans);
+      font-size: 12px;
+      color: var(--text-3);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* ── Responsive ─────────────────────────────────────────────────────── */
+    @media (max-width: 980px) {
+      .layout { grid-template-columns: 1fr; }
+      .toc { display: none; }
+      .toc-mobile {
+        display: block;
+        position: sticky; top: 3px; z-index: 5;
+        margin: -8px -16px 20px;
+        padding: 10px 16px;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+      }
+      .toc-mobile__scroll { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: none; }
+      .toc-mobile__scroll::-webkit-scrollbar { display: none; }
+      .toc-mobile a {
+        font-family: var(--sans); font-size: 12.5px; font-weight: 700; color: var(--text-2);
+        text-decoration: none; white-space: nowrap; padding: 7px 13px; border-radius: 999px;
+        border: 1px solid var(--border); background: var(--surface); flex: none;
+      }
+      .toc-mobile a.active { color: var(--accent-ink); background: var(--accent); border-color: var(--accent); }
+    }
+
+    @media (max-width: 720px) {
+      .glance { grid-template-columns: 1fr 1fr; }
+      .header__glow { width: 320px; height: 320px; top: -140px; right: -120px; }
+      body { font-size: 15.5px; }
+      .contact { flex-direction: column; align-items: flex-start; }
+    }
+
+    @media (max-width: 460px) {
+      .glance { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .glance__item, .contact-btn { transition: none; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }
+</style>
+
+<div class="progress-rail"><div class="progress-bar" id="progressBar"></div></div>
+
+<div class="page">
+
+    <!-- ── Header ────────────────────────────────────────────────────────── -->
+    <header class="header">
+        <div class="header__glow" aria-hidden="true"></div>
+
+        <div class="header__inner">
+            <div class="kicker">Arrow Escape: Puzzle Game · by LoopBit</div>
+
+            <h1>Privacy Policy</h1>
+            <p class="header__lede">Arrow Escape is a puzzle game you can pick up and play without handing over any personal information. This page explains — plainly — what little data the app touches, where it stays, and what changes if that ever does.</p>
+
+            <span class="date-chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="3"></rect><path d="M3 10h18M8 2v4M16 2v4"></path></svg>
+        Effective <strong>August 12, 2026</strong>
+      </span>
+        </div>
+    </header>
+
+    <!-- ── At a glance ───────────────────────────────────────────────────── -->
+    <div class="glance">
+        <div class="glance__item">
+            <span class="glance__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" stroke-dasharray="3 3"></path><path d="m9 20 2 2 4-5"></path></svg></span>
+            <div class="glance__title">No account needed</div>
+            <div class="glance__body">Open the app and play — no sign-up, login, or profile required.</div>
+        </div>
+        <div class="glance__item">
+            <span class="glance__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"></rect><path d="M11 18h2"></path></svg></span>
+            <div class="glance__title">Stays on your device</div>
+            <div class="glance__body">Progress, stats and settings live in local storage only — see §4.</div>
+        </div>
+        <div class="glance__item">
+            <span class="glance__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="m5 5 14 14"></path></svg></span>
+            <div class="glance__title">No ads or trackers today</div>
+            <div class="glance__body">None are built into the app right now — what changes that is covered in §5.</div>
+        </div>
+        <div class="glance__item">
+            <span class="glance__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"></path><path d="M21 3v6h-6"></path></svg></span>
+            <div class="glance__title">Play Store handles updates</div>
+            <div class="glance__body">Google Play services check for new versions — that's the only routine network call.</div>
+        </div>
+    </div>
+
+    <!-- ── Mobile TOC ────────────────────────────────────────────────────── -->
+    <nav class="toc-mobile" aria-label="Section navigation">
+        <div class="toc-mobile__scroll" id="tocMobileScroll">
+            <a href="#overview" data-n="1">Overview</a>
+            <a href="#collect" data-n="2">What we collect</a>
+            <a href="#use" data-n="3">How we use it</a>
+            <a href="#storage" data-n="4">Where it lives</a>
+            <a href="#third-party" data-n="5">Third parties</a>
+            <a href="#children" data-n="6">Children</a>
+            <a href="#choices" data-n="7">Your choices</a>
+            <a href="#security" data-n="8">Security</a>
+            <a href="#changes" data-n="9">Changes</a>
+            <a href="#contact" data-n="10">Contact</a>
+        </div>
+    </nav>
+
+    <div class="layout">
+        <!-- ── Desktop TOC rail ──────────────────────────────────────────────── -->
+        <nav class="toc" aria-label="Section navigation">
+            <span class="eyebrow toc__label">On this page</span>
+            <ol>
+                <li><a href="#overview"><span class="n">01</span>Overview</a></li>
+                <li><a href="#collect"><span class="n">02</span>What we collect</a></li>
+                <li><a href="#use"><span class="n">03</span>How we use it</a></li>
+                <li><a href="#storage"><span class="n">04</span>Where it lives</a></li>
+                <li><a href="#third-party"><span class="n">05</span>Third parties</a></li>
+                <li><a href="#children"><span class="n">06</span>Children</a></li>
+                <li><a href="#choices"><span class="n">07</span>Your choices</a></li>
+                <li><a href="#security"><span class="n">08</span>Security</a></li>
+                <li><a href="#changes"><span class="n">09</span>Changes</a></li>
+                <li><a href="#contact"><span class="n">10</span>Contact</a></li>
+            </ol>
+        </nav>
+
+        <!-- ── Document ──────────────────────────────────────────────────────── -->
+        <main class="doc">
+
+            <section class="sec" id="overview">
+                <div class="sec__head"><span class="sec__num">01</span><h2>Overview</h2></div>
+                <p>LoopBit built Arrow Escape: Puzzle Game as a self-contained puzzle game: slide the arrows out of the grid, chase stars, streaks and badges — all without an account. This policy exists because Google Play requires one and because you deserve to know what a game touches, even a small one. Short version: almost nothing leaves your phone.</p>
+                <p class="muted">By installing or playing Arrow Escape, you're agreeing to the practices described below. If something here doesn't sit right with you, the fastest fix is also the most effective one — uninstall the app, which removes every trace of local data along with it (more on that in §4 and §7).</p>
+            </section>
+
+            <section class="sec" id="collect">
+                <div class="sec__head"><span class="sec__num">02</span><h2>Information we collect</h2></div>
+
+                <h3 class="sub">What you give us</h3>
+                <p>Nothing. There's no registration, login, profile, in-app purchase, or contact form anywhere in the app, so we never ask for your name, email address, phone number, or payment details.</p>
+
+                <h3 class="sub">What the app stores automatically</h3>
+                <p>To remember your progress between sessions, the app saves a small set of gameplay values on your device using Android's local <em>SharedPreferences</em> storage:</p>
+                <ul>
+                    <li>Level progress — which levels are unlocked, stars earned, moves used, lives lost</li>
+                    <li>Coins, total score, hint usage, and daily/weekly challenge progress</li>
+                    <li>Play streaks and the calendar of days you've played</li>
+                    <li>Your chosen avatar, avatar frame, sound/music/vibration and light-or-dark theme settings</li>
+                </ul>
+                <p>None of this is tied to your identity, and none of it is transmitted to LoopBit or anyone else — it's read and written locally, the same way the app remembers where you left off.</p>
+
+                <h3 class="sub">Device permissions</h3>
+                <div class="table-wrap">
+                    <table class="perms">
+                        <thead><tr><th>Permission</th><th>What it's for</th></tr></thead>
+                        <tbody>
+                        <tr><td class="k">Internet / network state</td><td>Lets the app check Google Play for available updates and open external links, like the Play Store listing when you tap "Rate the App."</td></tr>
+                        <tr><td class="k">Vibration</td><td>Powers haptic feedback — a light buzz when you clear a level or lose a life. No data is collected or sent anywhere.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="sec" id="use">
+                <div class="sec__head"><span class="sec__num">03</span><h2>How we use information</h2></div>
+                <p>Because nothing is collected off your device, "use" is limited to running the game itself: restoring your progress when you reopen the app, applying your saved settings, and calculating stats like your star count or unlocked badges. We don't build advertising profiles, we don't track you across apps or websites, and we don't sell or rent anything — there's no personal data on our end to sell.</p>
+            </section>
+
+            <section class="sec" id="storage">
+                <div class="sec__head"><span class="sec__num">04</span><h2>Where your data lives</h2></div>
+                <p>Everything listed in §2 stays in local storage on your device. LoopBit doesn't operate a server for this app, so there's nowhere for it to sync to even if we wanted it to. There's currently no cloud save or cross-device sync — progress made on one phone won't follow you to another.</p>
+                <div class="callout">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"></path><circle cx="12" cy="12" r="9"></circle></svg>
+                    <p>Uninstalling the app deletes this data permanently. Since it never left your device, there's no separate copy anywhere for us to remove.</p>
+                </div>
+            </section>
+
+            <section class="sec" id="third-party">
+                <div class="sec__head"><span class="sec__num">05</span><h2>Third-party services</h2></div>
+                <p><strong>Google Play services</strong> is the one third party involved today — used only for the in-app update check and to hand off to the Play Store when you tap "Rate the App." That interaction is governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's own Privacy Policy</a>.</p>
+                <p>Arrow Escape does not currently include advertising or analytics SDKs of any kind.</p>
+                <h3 class="sub">If that changes</h3>
+                <p>As the game grows, we may add advertising (for example, Google AdMob), analytics (for example, Firebase Analytics), or an optional cloud-save account. None of that is switched on today. If we do turn any of it on, we'll update this policy first, move the "Effective" date at the top of this page, and — wherever the law requires it — ask for your consent before the feature activates.</p>
+            </section>
+
+            <section class="sec" id="children">
+                <div class="sec__head"><span class="sec__num">06</span><h2>Children's privacy</h2></div>
+                <p>Arrow Escape is a general-audience puzzle game and isn't directed specifically at children under 13. Since we don't collect personal information from anyone, of any age, there's nothing collected from children either. If you believe a child has somehow provided us personal information, contact us at the address in §10 and we'll look into it.</p>
+            </section>
+
+            <section class="sec" id="choices">
+                <div class="sec__head"><span class="sec__num">07</span><h2>Your choices</h2></div>
+                <ul>
+                    <li><strong>Permissions</strong> — turn off network access or vibration anytime in your device's app settings. Disabling network access just means the app stops checking for updates and can't open outbound links.</li>
+                    <li><strong>In-app settings</strong> — sound, music, haptics and light/dark theme are all adjustable directly from the Settings screen.</li>
+                    <li><strong>Deleting your data</strong> — uninstall the app. Because everything lives in local storage, that single action removes it completely.</li>
+                </ul>
+            </section>
+
+            <section class="sec" id="security">
+                <div class="sec__head"><span class="sec__num">08</span><h2>Security</h2></div>
+                <p>Because gameplay data never leaves your device, it's protected by whatever passcode, biometric lock, or encryption your device already uses. We follow ordinary secure-development practice for everything we build, but no method of storage is ever 100% guaranteed — so your device's own security is, in effect, the app's security too.</p>
+            </section>
+
+            <section class="sec" id="changes">
+                <div class="sec__head"><span class="sec__num">09</span><h2>Changes to this policy</h2></div>
+                <p>We'll post updates on this page and refresh the "Effective" date at the top whenever something meaningful changes — most likely if we ever switch on advertising, analytics, or accounts (see §5). Continuing to use Arrow Escape after an update means you accept the revised policy.</p>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ── Contact ───────────────────────────────────────────────────────── -->
+    <section class="contact" id="contact">
+        <div>
+            <h2>10 · Questions?</h2>
+            <p>For anything about this policy or how Arrow Escape handles data, reach the developer directly — usually a same-day reply.</p>
+        </div>
+        <a class="contact-btn" href="mailto:satanianiket888@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2.5"></rect><path d="m3 6 9 7 9-7"></path></svg>
+            satanianiket888@gmail.com
+        </a>
+    </section>
+
+    <div class="foot">
+        <span>© 2026 LoopBit</span>
+        <span>Arrow Escape: Puzzle Game — Privacy Policy</span>
+    </div>
+
+</div>
+
+<script>
+    (function () {
+      var links = Array.prototype.slice.call(document.querySelectorAll('.toc a, .toc-mobile a'));
+      var sections = links
+        .map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); })
+        .filter(Boolean);
+
+      function setActive(id) {
+        links.forEach(function (a) {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+        });
+        var mobileActive = document.querySelector('.toc-mobile a.active');
+        if (mobileActive && mobileActive.scrollIntoView) {
+          mobileActive.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+        }
+      }
+
+      if ('IntersectionObserver' in window && sections.length) {
+        var observer = new IntersectionObserver(function (entries) {
+          var visible = entries.filter(function (e) { return e.isIntersecting; });
+          if (visible.length) {
+            visible.sort(function (a, b) { return a.boundingClientRect.top - b.boundingClientRect.top; });
+            setActive(visible[0].target.id);
+          }
+        }, { rootMargin: '-15% 0px -70% 0px', threshold: [0, 1] });
+        sections.forEach(function (s) { observer.observe(s); });
+      }
+
+      var bar = document.getElementById('progressBar');
+      function updateProgress() {
+        var doc = document.documentElement;
+        var max = doc.scrollHeight - doc.clientHeight;
+        var pct = max > 0 ? (doc.scrollTop / max) * 100 : 0;
+        bar.style.width = pct + '%';
+      }
+      document.addEventListener('scroll', updateProgress, { passive: true });
+      window.addEventListener('resize', updateProgress);
+      updateProgress();
+    })();
+</script>
